@@ -20,13 +20,13 @@ load_dotenv()
 #Creamos las funcines
 class bot_WS:
     
-    def __init__(self, rutaPerfil, rutaDriver):
+    def __init__(self):
         
         
         #Inciamos los parametros
-        self.ruta_perfil = rutaPerfil
-        self.ruta_driver = rutaDriver
         self.ruta_fichero = os.path.join(os.path.dirname(__file__), "bot_ws.log")
+        self.ruta_perfil = os.getenv("RUTA_PERFIL")
+        self.ruta_driver = os.getenv("RUTA_DRIVER")
         #Seteamos los parametros del bot
         self.service = Service(self.ruta_driver)
         self.options = Options()
